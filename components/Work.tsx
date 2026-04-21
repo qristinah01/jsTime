@@ -23,7 +23,7 @@ const projects: Project[] = [
     year: "2025",
     title: "The Learning Galaxy.",
     body: "Structured UX system for a 1st-grade learning platform — IA, hierarchy, and components end-to-end.",
-    href: "#",
+    href: "https://www.figma.com/design/3dPgoq49zwlni6kWmMqzUB/The-Learning-Galaxy?m=auto&t=zuOFYBxkuR2ovfvV-6",
     size: "lg",
   },
   {
@@ -33,7 +33,7 @@ const projects: Project[] = [
     year: "2024",
     title: "BET SLIP UX.",
     body: "Bet slips, odds-change states, cashier flows — clarity under pressure.",
-    href: "#",
+    href: "https://www.figma.com/design/L0w5hifSlxLw1r5T0MVVNO/Synon-Labs--Copy---Copy-?m=auto&t=yRTUQn3yqVLYy3Eb-6",
     size: "sm",
   },
   {
@@ -43,7 +43,7 @@ const projects: Project[] = [
     year: "2024",
     title: "High-converting landing.",
     body: "Hierarchy, CTA placement, friction cuts. Copy tuned with the founder.",
-    href: "#",
+    href: "https://www.figma.com/design/ICe1LfWlh9NTWSKu2iJoKo/Untitled?m=auto&t=K0abXFRGRpUlueSy-6",
     size: "sm",
   },
 ];

@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-bg-base text-text-primary font-sans;
+  }
+  ::selection {
+    background: rgba(23, 22, 25, 0.1);
+  }
+}
+
+@layer utilities {
+  /* Subtle noise grain overlay - applied to sections for texture */
+  .grain-overlay {
+    position: relative;
+    isolation: isolate;
+  }
+  .grain-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    z-index: 10;
+  }
+
+  .section-padding-x {
+    @apply px-page-x-mobile md:px-page-x-tablet xl:px-page-x-desktop;
+  }
+  .section-padding-y {
+    @apply py-section-y-mobile md:py-section-y-tablet xl:py-section-y-desktop;
+  }
+
+  /* Responsive display type — scales down on smaller breakpoints */
+  .type-display-hero {
+    @apply font-display font-normal;
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 1.05;
+    letter-spacing: -0.05em;
+  }
+  .type-display-cta {
+    @apply font-display font-light;
+    font-size: clamp(2.75rem, 7.5vw, 6.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+  }
+  .type-display-section {
+    @apply font-display font-light;
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+  }
+  .type-heading-about {
+    @apply font-display font-light;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+  }
+
+  /* Button reset for clean focus + transitions */
+  .btn-reset {
+    @apply inline-flex items-center gap-2 transition-all duration-180 ease-standard;
+  }
+
+  /* Pill primary button */
+  .btn-primary {
+    @apply btn-reset bg-text-primary text-text-on-dark rounded-full px-6 py-3.5
+           text-ui-button hover:bg-[#2A2830] active:scale-[0.98];
+  }
+  .btn-primary-icon {
+    @apply transition-transform duration-180 ease-standard;
+  }
+  .btn-primary:hover .btn-primary-icon {
+    transform: translateX(3px);
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply btn-reset rounded-full px-6 py-3.5 text-ui-button
+           border border-border-hairline hover:border-text-primary/40;
+  }
+}
